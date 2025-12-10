@@ -1,0 +1,283 @@
+/* Variáveis de Cores Atualizadas */
+:root {
+    --primary-color: #8A2BE2; /* Roxo Vibrante (Destaque) */
+    --primary-hover: #6A1AAB; /* Roxo mais escuro para hover */
+    --secondary-color: #FFFFFF; /* Branco (Usado para títulos no header) */
+    --background-color: #1a1a1a; /* Fundo Principal (Preto) */
+    --card-background: #ffffff; /* Fundo do card (Branco) */
+    --text-color: #333; /* Texto principal do card (Escuro) */
+    --text-on-dark: #f0f0f0; /* Texto sobre o fundo preto */
+    --border-color: #ddd;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color); /* Fundo Preto */
+    color: var(--text-on-dark); /* Texto no corpo deve ser claro */
+    line-height: 1.6;
+}
+
+/* --- Header e Navegação --- */
+.header-content {
+    background-color: #000000; /* Preto Total para a barra superior */
+    color: var(--secondary-color); /* Branco */
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Sombra clara no fundo escuro */
+}
+
+.main-title {
+    font-size: 1.8em;
+    font-weight: 900;
+}
+
+.navbar {
+    margin-right: 20px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-item {
+    margin-left: 20px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: var(--secondary-color); /* Branco */
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: color 0.3s;
+}
+
+.nav-item a:hover {
+    color: var(--primary-color); /* Roxo no hover */
+}
+
+/* Estilo para o contador de carrinho */
+.cart-badge {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7em;
+    font-weight: 700;
+    margin-left: 5px;
+    vertical-align: super;
+}
+
+
+/* --- Layout Principal --- */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.page-title {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--primary-color); /* Roxo */
+    text-align: center;
+}
+
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+/* --- Formulário de Checkout (CARD BRANCO) --- */
+.checkout-form {
+    background-color: var(--card-background); /* Card Branco */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra mais forte para destacar */
+}
+
+.checkout-form h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-color); /* Texto escuro no card branco */
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1em;
+    color: var(--text-color); /* Cor do texto dentro do input */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.3);
+    outline: none;
+}
+
+/* --- Opções de Pagamento --- */
+.payment-title {
+    margin-top: 30px;
+    color: var(--text-color); /* Garante que o título seja escuro no card branco */
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+    color: var(--text-color); /* Texto da opção de pagamento escuro */
+}
+
+/* Estilos de rádio mantidos */
+.payment-label input[type="radio"]:checked + .custom-radio {
+    border-color: var(--primary-color);
+}
+.payment-label input[type="radio"]:checked + .custom-radio::after {
+    background: var(--primary-color);
+}
+
+
+/* --- Botão Principal --- */
+.action-button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 40px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.action-button:hover {
+    background-color: var(--primary-hover);
+}
+
+.action-button:active {
+    transform: scale(0.99);
+}
+
+
+/* --- Resumo da Compra (CARD BRANCO) --- */
+.cart-summary {
+    background-color: var(--card-background); /* Card Branco */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra mais forte para destacar */
+    height: fit-content;
+    color: var(--text-color); /* Texto escuro no card branco */
+}
+
+.cart-summary h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dotted var(--border-color);
+    font-size: 1em;
+}
+
+.summary-line:last-of-type {
+    border-bottom: none;
+}
+
+.total-line {
+    border-top: 2px solid var(--primary-color);
+    margin-top: 15px;
+    padding-top: 15px;
+    font-size: 1.2em;
+}
+
+.items-title {
+    margin-top: 20px;
+    font-weight: 600;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.items-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.items-list li {
+    font-size: 0.9em;
+    padding: 4px 0;
+    color: #555;
+}
+
+/* --- Media Queries (Responsividade) --- */
+@media (max-width: 900px) {
+    .checkout-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-summary {
+        order: -1;
+        margin-bottom: 30px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar {
+        margin-top: 10px;
+        margin-right: 0;
+    }
+
+    .nav-list {
+        justify-content: center;
+    }
+    
+    .nav-item {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+}

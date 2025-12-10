@@ -1,0 +1,334 @@
+/* ==================== VARIÁVEIS CONSOLIDADAS ==================== */
+:root {
+    /* Cores */
+    --primary-color: #A020F0; /* Roxo principal/Accent */
+    --secondary-color: #FFFFFF; /* Branco */
+    --background-dark: #000000; /* Fundo preto total */
+    --background-card: #1A1A1A; /* Fundo do card/Elemento */
+    --text-light: #FFFFFF;
+    --text-secondary: #AAAAAA; /* Descrições e detalhes */
+    
+    /* Tipografia */
+    --font-family: 'Poppins', sans-serif;
+}
+
+/* ==================== RESET E ESTRUTURA BÁSICA ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-dark); 
+    color: var(--text-light); /* Adicionado cor de texto padrão */
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh;
+}
+
+/* --- HEADER FIXO E HORIZONTAL (Estrutura Simplificada e Centralizada) --- */
+.header-content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 25px 5%;
+    background-color: var(--background-dark); 
+    border-bottom: 2px solid var(--primary-color);
+    width: 100%;
+}
+
+/* Placeholder para o Logo/Título (Techfit Academia) */
+.logo-placeholder {
+    width: 150px; 
+    text-align: left;
+}
+.logo-placeholder span {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.navbar {
+    flex-grow: 1; /* Ocupa o espaço central */
+    text-align: center;
+    padding: 0;
+    box-shadow: none;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Centraliza a lista na navbar */
+    align-items: center;
+    height: 100%;
+    gap: 30px; 
+}
+
+/* Estilos de link da navegação */
+.nav-item a {
+    text-decoration: none;
+    color: var(--text-light); 
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 0;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.nav-item a:hover {
+    color: var(--primary-color);
+}
+
+/* Estilo do item ativo (PRODUTOS) */
+.nav-list a[data-page="produtos"] {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+}
+
+/* Estilos do carrinho */
+.cart-icon-item {
+    position: relative; 
+    list-style: none; 
+    width: 150px; /* Largura definida para equilíbrio */
+    text-align: right;
+}
+.cart-icon-item a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 600;
+}
+.cart-badge {
+    position: absolute;
+    top: -10px; 
+    right: -10px;
+    background-color: var(--primary-color); 
+    color: var(--secondary-color); 
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 50%;
+    min-width: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); 
+    pointer-events: none; 
+}
+
+/* ==================== CONTEÚDO PRINCIPAL ==================== */
+main {
+    flex-grow: 1; 
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    padding: 30px; 
+    max-width: 1200px; /* Limita a largura para melhor leitura */
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+/* ==================== TÍTULO PRINCIPAL ==================== */
+.page-title {
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--secondary-color);
+    text-align: center;
+    margin: 40px auto 20px auto; 
+    letter-spacing: 3px;
+    padding-bottom: 10px;
+    border-bottom: 4px solid var(--primary-color);
+    display: table; 
+    text-transform: uppercase;
+}
+
+/* ==================== CARDS DE PRODUTOS (Grid Revisado) ==================== */
+
+.products-grid {
+    /* Novo layout Grid responsivo */
+    display: grid; 
+    /* Permite mais colunas em telas maiores */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    /* AUMENTO DO ESPAÇAMENTO */
+    gap: 40px;
+    max-width: 100%; 
+    margin: 30px 0;
+    padding-bottom: 50px;
+}
+
+.product-card {
+    background-color: var(--background-card); 
+    padding: 40px;
+    border-radius: 30px;
+    display: center; 
+    align-items: center; 
+    box-shadow: 
+        inset 5px 0 0 0 var(--primary-color), 
+        0 0 15px rgba(160, 32, 240, 0.2); 
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        inset 5px 0 0 0 var(--primary-color), 
+        0 0 25px rgba(160, 32, 240, 0.4); 
+}
+
+.product-image {
+    width: 120px; 
+    height: 120px;
+    min-width: 120px; /* Garante que não encolhe */
+    margin-right: 20px;
+    border-radius: 8px;
+    object-fit: cover; 
+    border: 1px solid var(--primary-color);
+}
+
+.product-details {
+    flex-grow: 1;
+}
+
+.product-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.product-description {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    /* Ajustado para caber melhor no layout */
+    margin-bottom: 0; 
+}
+
+.product-price-box {
+    text-align: right;
+    width: 150px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end; /* Alinha os itens à direita */
+    min-width: 150px;
+}
+
+.product-price {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--primary-color); 
+    margin-bottom: 5px;
+}
+
+.action-button {
+    display: block;
+    width: 100%;
+    max-width: 150px; /* Limita o botão ao tamanho da caixa */
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s, border 0.3s;
+}
+
+.add-to-cart {
+    background-color: var(--primary-color); 
+    color: var(--secondary-color);
+    border: none;
+    box-shadow: 0 0 10px rgba(160, 32, 240, 0.5); 
+}
+
+.add-to-cart:hover {
+    background-color: #C040FF; 
+    opacity: 1;
+}
+
+/* --- Rodapé (Adicionado) --- */
+.footer {
+    background-color: var(--background-card);
+    text-align: center;
+    padding: 30px 0;
+    margin-top: auto;
+    border-top: 2px solid var(--primary-color);
+    width: 100%;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    color: #aaaaaa;
+}
+
+/* ==================== RESPONSIVIDADE ==================== */
+@media (max-width: 768px) {
+    
+    /* Header em coluna para telas pequenas */
+    .header-content {
+        flex-direction: column; 
+        align-items: center;
+        padding: 20px 5%;
+        text-align: center;
+    }
+    
+    .logo-placeholder {
+        display: none; 
+    }
+    
+    .navbar {
+        order: 2; 
+        margin-top: 15px;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .cart-icon-item {
+        order: 3;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .page-title {
+        font-size: 30px;
+        margin: 20px auto;
+    }
+    
+    /* Layout dos produtos em coluna no mobile */
+    .products-grid {
+        grid-template-columns: 1fr;
+        /* AUMENTO DO ESPAÇAMENTO NO MOBILE */
+        gap: 40px; 
+    }
+    
+    .product-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .product-image {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .product-details {
+        margin-bottom: 15px;
+    }
+    
+    .product-price-box {
+        width: 100%;
+        text-align: center;
+        align-items: center; /* Centraliza a caixa de preço e botão */
+    }
+    
+    .action-button {
+        max-width: 250px; /* Aumenta o tamanho do botão no mobile */
+    }
+}

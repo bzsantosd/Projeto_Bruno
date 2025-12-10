@@ -1,0 +1,395 @@
+/*
+ * ----------------------------------------
+ * Variáveis de Cores e Estilos
+ * ----------------------------------------
+ */
+:root {
+    /* Cores - Roxo e Preto */
+    --primary-color: #6a0dad; /* Roxo Principal (Destaques, Botões) */
+    --secondary-color: #4b0082; /* Roxo Índigo (Hover) */
+    --background-dark: #121212; /* Fundo Principal */
+    --background-card: #1f1f1f; /* Cor dos cards (cinza escuro sutil) */
+    --text-color-light: #fff; /* Texto no fundo preto */
+    --text-color-accent: #ddd; /* Texto secundário ou neutro */
+    --border-color: #333333; /* Cor da borda/linha em fundo escuro */
+
+    /* Espaçamento */
+    --padding-default: 20px;
+    --margin-default: 15px;
+    --border-radius: 8px;
+    --header-height: 70px;
+}
+
+/*
+ * ----------------------------------------
+ * Estilos Globais
+ * ----------------------------------------
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-dark);
+    color: var(--text-color-light);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--padding-default);
+}
+
+/*
+ * ----------------------------------------
+ * Cabeçalho e Navegação
+ * ----------------------------------------
+ */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--padding-default);
+    height: var(--header-height);
+    background-color: var(--background-dark);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-item {
+    margin-left: var(--margin-default);
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: var(--text-color-light);
+    padding: 10px 12px;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 0.95rem;
+    font-weight: 600;
+    display: block;
+}
+
+.nav-item a:hover {
+    color: var(--primary-color);
+    background-color: var(--border-color);
+}
+
+.nav-item.active a {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 7px;
+}
+
+/* Botão de Entrar */
+.auth-buttons .btn-login {
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 8px 18px;
+    border-radius: var(--border-radius);
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.auth-buttons .btn-login:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+}
+
+/*
+ * ----------------------------------------
+ * Título e Logo (Topo da Página)
+ * ----------------------------------------
+ */
+.title-logo-container {
+    text-align: center;
+    padding: 40px 0 20px 0;
+}
+
+.main-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 5px;
+}
+
+/*
+ * ----------------------------------------
+ * Hero Section (Banner Principal)
+ * ----------------------------------------
+ */
+.hero-section {
+    background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b231b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 50px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+/* Overlay Escuro */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Sombra para o texto se destacar */
+}
+
+.hero-text {
+    z-index: 10;
+    text-align: center;
+    max-width: 800px;
+    padding: var(--padding-default);
+}
+
+.hero-text h2 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    color: var(--text-color-light);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: var(--text-color-accent);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.1s;
+    text-transform: uppercase;
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/*
+ * ----------------------------------------
+ * Features Section (Cards de Recursos)
+ * ----------------------------------------
+ */
+.features-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--padding-default);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.feature-card {
+    background-color: var(--background-card);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.feature-card i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-color-light);
+}
+
+.feature-card p {
+    color: var(--text-color-accent);
+    font-size: 0.95rem;
+}
+
+/*
+ * ----------------------------------------
+ * Testimonials Section (Depoimentos)
+ * ----------------------------------------
+ */
+.testimonials-section {
+    padding: 40px 0 60px 0;
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--padding-default);
+}
+
+.testimonial-card {
+    background-color: var(--background-card);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    transition: border 0.3s;
+    border: 1px solid var(--border-color);
+}
+
+.testimonial-card.highlighted {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(106, 13, 173, 0.5);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.user-icon {
+    width: 35px;
+    height: 35px;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    margin-right: 10px;
+}
+
+.user-name {
+    font-weight: 600;
+    color: var(--text-color-light);
+}
+
+.rating {
+    margin-bottom: 10px;
+}
+
+.rating .star {
+    color: gold;
+    font-size: 1.2rem;
+}
+
+.card-text {
+    font-style: italic;
+    color: var(--text-color-accent);
+}
+
+/*
+ * ----------------------------------------
+ * Rodapé (Footer)
+ * ----------------------------------------
+ */
+.footer {
+    text-align: center;
+    padding: var(--padding-default) 0;
+    border-top: 1px solid var(--border-color);
+    margin-top: 50px;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/*
+ * ----------------------------------------
+ * Responsividade
+ * ----------------------------------------
+ */
+@media (max-width: 992px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-text h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        height: auto;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        position: static;
+    }
+
+    .navbar {
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .nav-list {
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .nav-item {
+        margin: 5px 0;
+    }
+
+    .auth-buttons {
+        margin-top: 15px;
+    }
+    
+    .hero-section {
+        height: 400px;
+        margin-bottom: 30px;
+    }
+    
+    .hero-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    .features-section {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,455 @@
+/* --- Tema Dark Mode: Preto e Roxo --- */
+
+:root {
+    /* Cores */
+    --primary-color: #9333ea; /* Roxo Vibrante (Destaque Principal) */
+    --secondary-color: #a0a0a0; /* Cinza claro para texto secundário */
+    --background-color: #121212; /* Fundo Preto Escuro */
+    --card-background: #1e1e1e; /* Fundo dos cards (Preto Um Pouco Mais Claro) */
+    --success-color: #38c172; /* Verde ajustado para dark mode (alta/lucro) */
+    --danger-color: #e3342f; /* Vermelho ajustado para dark mode (baixa/alerta) */
+    --warning-color: #ffed4a; /* Amarelo ajustado para dark mode (aviso) */
+    --text-color: #f0f0f0; /* Cor principal do texto (Branco/Cinza Claro) */
+    --border-color: #333333; /* Linhas de divisão */
+    
+    /* Sombras (Mais sutis em fundos escuros, ou usar bordas luminosas) */
+    --box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.4); 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- Layout Principal --- */
+
+.dashboard-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Cabeçalho (Header) --- */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 20px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    border: 2px solid var(--primary-color); /* Borda de destaque */
+    margin-right: 10px;
+}
+
+.user-info span {
+    display: block;
+    font-weight: 600;
+}
+
+.adm-label {
+    font-size: 0.8em;
+    color: var(--secondary-color);
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.main-title {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--primary-color); /* Título em roxo */
+}
+
+/* --- Navegação por Período (Period Nav) --- */
+
+.period-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    background-color: var(--card-background);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow-light);
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-family: inherit;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.nav-button:hover {
+    background-color: #333333;
+}
+
+.nav-button.active {
+    background-color: var(--primary-color);
+    color: var(--card-background); /* Texto em fundo roxo fica preto/escuro */
+    font-weight: 600;
+}
+
+/* --- Conteúdo Principal (Main Content) --- */
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.row {
+    display: grid;
+    gap: 20px;
+}
+
+.row-people {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.row-products {
+    grid-template-columns: 2fr 1fr;
+}
+
+.row-flow {
+    grid-template-columns: 1fr;
+}
+
+/* --- Cards de Estatísticas (Stat Cards) --- */
+
+.card {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--box-shadow-light);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary-color); /* Destaque roxo ao passar o mouse */
+}
+
+.card-title {
+    font-size: 1em;
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.stat-card .card-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stat-card .icon-people, .stat-card .icon-money {
+    font-size: 2.5em;
+    color: var(--primary-color); /* Ícones em roxo */
+    opacity: 0.8;
+}
+
+.stat-card .main-value {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-right: auto;
+    margin-left: 15px;
+}
+
+.stat-card .secondary-label {
+    font-size: 1em;
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-left: auto;
+}
+
+/* Tendências (Trend) */
+.trend {
+    font-weight: 700;
+    font-size: 0.9em;
+    padding: 4px 8px;
+    border-radius: 20px;
+}
+
+.trend.up {
+    color: var(--success-color);
+    background-color: rgba(56, 193, 114, 0.2); /* Fundo verde transparente */
+}
+
+.trend.down {
+    color: var(--danger-color);
+    background-color: rgba(227, 52, 47, 0.2); /* Fundo vermelho transparente */
+}
+
+/* --- Produtos --- */
+
+.product-high-card .product-stats {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.product-info-group {
+    flex-grow: 1;
+}
+
+.product-name {
+    font-weight: 600;
+    font-size: 1.1em;
+    display: block;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.product-values {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.product-value-box {
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #2a2a2a; /* Fundo levemente mais claro dentro do card */
+    flex-grow: 1;
+}
+
+.product-value-number {
+    display: block;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 3px;
+    color: var(--text-color);
+}
+
+.product-value-number.green {
+    color: var(--success-color);
+}
+
+.product-value-label {
+    font-size: 0.8em;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+}
+
+/* Produtos em Estoque Baixo */
+
+.product-low-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.low-stock-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.warning-section {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(255, 237, 74, 0.15); /* Fundo amarelo transparente */
+    border: 1px solid var(--warning-color);
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.icon-warning {
+    font-size: 1.5em;
+    color: var(--warning-color);
+    margin-right: 10px;
+}
+
+.warning-section p {
+    margin: 0;
+    font-weight: 600;
+    color: var(--warning-color);
+}
+
+.stock-info {
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+}
+
+.stock-name {
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.stock-value-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stock-value-number {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.stock-value-number.red {
+    color: var(--danger-color);
+}
+
+.stock-value-label {
+    font-size: 0.9em;
+    color: var(--secondary-color);
+    margin-right: auto;
+    margin-left: 10px;
+}
+
+/* Triângulo de Baixa (Down Trend) */
+.stock-value-box .trend.down {
+    width: 0; 
+    height: 0; 
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid var(--danger-color); 
+    background: none;
+    padding: 0;
+}
+
+
+/* --- Fluxo de Alunos (Flow Card) --- */
+
+.flow-card {
+    padding-bottom: 40px; 
+}
+
+.flow-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.flow-metric {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.flow-value {
+    font-size: 3em;
+    font-weight: 700;
+    display: block;
+}
+
+.flow-value.yellow {
+    color: var(--warning-color); /* Amarelo para a média diária */
+}
+
+.flow-label {
+    font-size: 1em;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.flow-chart {
+    position: relative;
+    padding: 10px 0;
+    width: 100%;
+    height: 120px; 
+}
+
+.chart-labels {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    bottom: -20px;
+    width: 100%;
+    font-size: 0.8em;
+    color: var(--secondary-color);
+}
+
+.chart-labels span {
+    font-weight: 600;
+}
+
+.chart-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--border-color);
+}
+
+.chart-data-point {
+    position: absolute;
+    width: 10px; 
+    bottom: 0;
+    background-color: var(--primary-color); /* Barras do gráfico em roxo */
+    border-radius: 5px 5px 0 0;
+    transform: translateX(-50%);
+    transition: height 0.5s;
+}
+
+/* O HTML original usa "red" para os pontos de dados, vamos manter a cor de alerta para consistência, mas com um tom escuro */
+.chart-data-point.red {
+    background-color: var(--danger-color); 
+}
+
+
+/* --- Responsividade Básica --- */
+
+@media (max-width: 992px) {
+    .row-people {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .row-products {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .main-title {
+        margin-top: 10px;
+        font-size: 1.5em;
+    }
+    .row-people {
+        grid-template-columns: 1fr;
+    }
+    .product-high-card .product-stats {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .product-values {
+        flex-direction: column;
+        gap: 5px;
+    }
+}

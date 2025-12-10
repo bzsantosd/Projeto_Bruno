@@ -1,0 +1,185 @@
+/*
+ * ----------------------------------------------------------------
+ * Variáveis e Reset
+ * ----------------------------------------------------------------
+ */
+
+:root {
+    --primary-color: #7A00FF; 
+    --secondary-color: #5E00CC; 
+    --text-dark: #222222; 
+    --text-light: #f4f4f4; 
+    --background-form: #fff;
+    --background-body: #1a1a1a; 
+    --border-radius: 6px; /* Bordas levemente menores */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-body);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Container Menor e Formulário Centralizado
+ * ----------------------------------------------------------------
+ */
+
+.container {
+    width: 90%;
+    max-width: 380px; /* Largura Máxima Reduzida (Mais estreito) */
+    background-color: var(--background-form);
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 25px rgba(122, 0, 255, 0.4); 
+    padding: 30px; /* Padding Reduzido (Menos espaço interno) */
+}
+
+.form-title {
+    color: var(--primary-color);
+    font-size: 1.6em; /* Título um pouco menor */
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Remove a seção de imagem, se ela ainda estivesse no CSS */
+.image-section {
+    display: none; 
+}
+
+
+/*
+ * ----------------------------------------------------------------
+ * Inputs e Botão (Ajustados ao novo padding)
+ * ----------------------------------------------------------------
+ */
+
+.input-group {
+    margin-bottom: 15px; /* Margem entre inputs reduzida */
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+    font-size: 0.85em; /* Fonte da label ligeiramente menor */
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 12px; /* Padding do input ajustado */
+    border: 1px solid #ddd;
+    border-radius: 4px; /* Bordas mais suaves */
+    font-size: 0.95em; 
+    color: var(--text-dark);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(122, 0, 255, 0.2);
+    outline: none;
+}
+
+.action-button {
+    width: 100%;
+    padding: 10px; /* Padding do botão reduzido */
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 4px;
+    font-size: 1.0em;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
+
+.action-button:hover {
+    background-color: var(--secondary-color);
+}
+
+
+/*
+ * ----------------------------------------------------------------
+ * Link para Login
+ * ----------------------------------------------------------------
+ */
+
+.login-link-text {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 0.8em; /* Fonte do link um pouco menor */
+    color: var(--text-dark);
+}
+
+.login-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Responsividade Simples
+ * ----------------------------------------------------------------
+ */
+
+@media (max-width: 400px) {
+    .container {
+        max-width: 95%;
+        padding: 20px;
+        margin: 10px;
+    }
+}
+/*
+ * ----------------------------------------------------------------
+ * Estilos de Notificação (Alerta)
+ * ----------------------------------------------------------------
+ */
+
+.custom-alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+    min-width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    /* Cor de sucesso (verde) */
+    background-color: #28a745; 
+}
+
+.custom-alert.error {
+    /* Cor de erro (vermelho) */
+    background-color: #dc3545; 
+}
+
+.custom-alert.show {
+    opacity: 1;
+    visibility: visible;
+}

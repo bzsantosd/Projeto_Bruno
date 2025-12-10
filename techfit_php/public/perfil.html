@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - TechFit</title>
+    <link rel="stylesheet" href="/techfit_php/public/css/perfil.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="nav-menu">
+            <ul>
+                <li class="nav-item active"><a href="/techfit_php/public/perfil.html">HOME</a></li>
+                <li class="nav-item"><a href="/techfit_php/public/Planos.html">PLANOS</a></li>
+                <li class="nav-item"><a href="/techfit_php/public/Produtos.html">PRODUTOS</a></li>
+                <li class="nav-item"><a href="/techfit_php/public/contato.html">CONTATO</a></li>
+                <li class="nav-item"><a href="/techfit_php/public/sobrenos.html">SOBRE NÓS</a></li>
+                <li class="nav-item"><a href="/techfit_php/public/catraca.html">CATRACA</a></li> 
+            </ul>
+        </nav>
+        
+        <a href="/techfit_php/public/cliente.html" class="user-profile-link" aria-label="Visualizar perfil do usuário">
+            <div class="user-info">
+                <div class="user-avatar" id="user-avatar" aria-hidden="true"></div>
+                <span class="user-name" id="header-user-name">Carregando...</span> 
+            </div>
+        </a>
+    </header>
+
+    <main class="profile-content">
+        
+        <section class="welcome-section">
+            <h1 id="welcome-message">Bem-vindo(a)</h1> 
+        </section>
+
+        <section class="schedule-card">
+            <div class="schedule-header">
+                <h2>Agenda de Aulas</h2>
+                <div class="schedule-date">
+                    <span class="date">14</span>
+                    <span class="day-of-week">Seg</span>
+                </div>
+            </div>
+            
+            <div class="day-buttons" role="tablist">
+                <button class="day-button active-day" data-day="seg" role="tab" aria-selected="true" aria-controls="seg-schedule">Seg</button>
+                <button class="day-button" data-day="ter" role="tab" aria-selected="false" aria-controls="ter-schedule">Ter</button>
+                <button class="day-button" data-day="qua" role="tab" aria-selected="false" aria-controls="qua-schedule">Qua</button>
+                <button class="day-button" data-day="qui" role="tab" aria-selected="false" aria-controls="qui-schedule">Qui</button>
+                <button class="day-button" data-day="sex" role="tab" aria-selected="false" aria-controls="sex-schedule">Sex</button>
+                <button class="day-button" data-day="sab" role="tab" aria-selected="false" aria-controls="sab-schedule">Sáb</button>
+            </div>
+
+            <div class="class-list" id="seg-schedule" role="tabpanel">
+                <div class="class-item">
+                    <span class="class-name">ZUMBA</span>
+                    <span class="class-time">08:00 - 09:00</span>
+                    <span class="class-instructor">MARIA SILVA</span>
+                </div>
+                <div class="class-item">
+                    <span class="class-name">TREINO FUNCIONAL</span>
+                    <span class="class-time">10:00 - 11:00</span>
+                    <span class="class-instructor">JOSÉ VIEIRA</span>
+                </div>
+            </div>
+
+            <div class="class-list hidden" id="ter-schedule" role="tabpanel" aria-hidden="true">
+                <p>Nenhuma aula agendada para Terça.</p>
+            </div>
+            
+            <div class="class-list hidden" id="qua-schedule" role="tabpanel" aria-hidden="true">
+                <div class="class-item">
+                    <span class="class-name">PILATES</span>
+                    <span class="class-time">19:00 - 20:00</span>
+                    <span class="class-instructor">PAULO BRITO</span>
+                </div>
+            </div>
+            
+            <div class="class-list hidden" id="qui-schedule" role="tabpanel" aria-hidden="true">
+                <div class="class-item">
+                    <span class="class-name">YOGA</span>
+                    <span class="class-time">06:00 - 07:00</span>
+                    <span class="class-instructor">ANA COSTA</span>
+                </div>
+            </div>
+            
+            <div class="class-list hidden" id="sex-schedule" role="tabpanel" aria-hidden="true">
+                <div class="class-item">
+                    <span class="class-name">TREINO LIVRE</span>
+                    <span class="class-time">18:00 - 19:00</span>
+                    <span class="class-instructor">JOÃO PEREIRA</span>
+                </div>
+            </div>
+            
+            <div class="class-list hidden" id="sab-schedule" role="tabpanel" aria-hidden="true">
+                <p>Não há aulas agendadas para Sábado.</p>
+            </div>
+        </section>
+                
+        <section class="payment-card">
+            <h2>Pagamento</h2>
+            <div class="payment-method">
+                <div class="visa-logo">VISA</div>
+                <div class="card-details">
+                    <span class="card-holder" id="card-holder-name">Carregando...</span> 
+                    <span class="card-number">VISA **** 1818</span>
+                </div>
+            </div>
+            <p class="payment-note">Deseja trocar o cartão?</p>
+        </section>
+
+    </main>
+
+    <script src="/techfit_php/public/js/perfil.js"></script>
+</body>
+</html>

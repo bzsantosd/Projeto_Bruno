@@ -1,0 +1,278 @@
+/*
+ * ----------------------------------------
+ * Variáveis de Cores e Estilos
+ * ----------------------------------------
+ */
+:root {
+    /* Cores - Roxo e Preto */
+    --primary-color: #6a0dad; /* Roxo Principal */
+    --secondary-color: #4b0082; /* Roxo Índigo (Para hover e detalhes) */
+    --background-dark: #121212; /* Fundo Preto Quase Absoluto */
+    --background-light: #f4f4f9; /* Fundo da seção (card) */
+    --text-color-light: #fff; /* Texto no fundo preto */
+    --text-color-dark: #2c2c2c; /* Texto dentro do card claro */
+    --border-color: #333333; /* Cor da borda em fundo escuro */
+
+    /* Espaçamento */
+    --padding-default: 20px;
+    --margin-default: 15px;
+    --border-radius: 8px;
+    --header-height: 80px;
+}
+
+/*
+ * ----------------------------------------
+ * Estilos Globais
+ * ----------------------------------------
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-dark);
+    color: var(--text-color-light);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding-top: var(--header-height); /* Espaço para o header fixo */
+}
+
+/*
+ * ----------------------------------------
+ * Cabeçalho e Navegação
+ * ----------------------------------------
+ */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--padding-default);
+    height: var(--header-height);
+    background-color: var(--background-dark);
+    border-bottom: 1px solid var(--border-color);
+    position: fixed; /* Fixa o cabeçalho */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.welcome-box {
+    margin-right: var(--padding-default);
+}
+
+.main-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.navbar {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: var(--margin-default);
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: var(--text-color-light);
+    padding: 10px 12px;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.nav-item a:hover {
+    background-color: var(--border-color);
+    color: var(--primary-color);
+}
+
+.nav-item.active a {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+}
+
+/*
+ * ----------------------------------------
+ * Ícone do Carrinho (Cart)
+ * ----------------------------------------
+ */
+.cart-icon-item a {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-right: 25px; /* Espaço para o badge */
+}
+
+.cart-icon-item a i {
+    margin-right: 5px;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: 0px;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    border-radius: 50%;
+    padding: 3px 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    min-width: 20px;
+    text-align: center;
+    line-height: 1;
+}
+
+/*
+ * ----------------------------------------
+ * Conteúdo Principal (MAIN)
+ * ----------------------------------------
+ */
+main {
+    max-width: 1000px;
+    margin: var(--padding-default) auto;
+    padding: var(--padding-default);
+}
+
+.perfil-secao {
+    background-color: var(--background-light); /* Fundo claro para o card */
+    color: var(--text-color-dark); /* Texto escuro dentro do card */
+    padding: 30px;
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(106, 13, 173, 0.2);
+}
+
+.perfil-secao h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+/* Bloco de Informação */
+.info-bloco {
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-bottom: 1px dashed #ddd;
+}
+
+.info-bloco:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.info-bloco label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+.info-bloco p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color-dark);
+}
+
+/* Botão de Edição */
+.editar-btn {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    border: none;
+    padding: 10px 18px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.1s;
+    margin-top: 15px;
+}
+
+.editar-btn i {
+    margin-right: 8px;
+}
+
+.editar-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.editar-btn:active {
+    transform: scale(0.98);
+}
+
+/*
+ * ----------------------------------------
+ * Rodapé (Footer)
+ * ----------------------------------------
+ */
+footer {
+    text-align: center;
+    padding: var(--padding-default);
+    background-color: var(--background-dark);
+    border-top: 1px solid var(--border-color);
+    margin-top: 30px;
+    color: #999;
+    font-size: 0.85rem;
+}
+
+/*
+ * ----------------------------------------
+ * Responsividade
+ * ----------------------------------------
+ */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        height: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        position: static; /* Remove fixed position for small screens */
+    }
+    
+    body {
+        padding-top: 0;
+    }
+
+    .navbar {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .nav-list {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .nav-item {
+        margin: 5px 8px;
+    }
+    
+    .main-title {
+        font-size: 1.5rem;
+    }
+    
+    .perfil-secao {
+        padding: var(--padding-default);
+    }
+}

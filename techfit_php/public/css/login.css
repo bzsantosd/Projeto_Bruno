@@ -1,0 +1,202 @@
+/*
+ * ----------------------------------------
+ * Estilos Globais
+ * ----------------------------------------
+ */
+:root {
+    /* Cores - Roxo e Preto */
+    --primary-color: #6a0dad; /* Roxo Profundo/Violeta Principal */
+    --secondary-color: #4b0082; /* Roxo Índigo (Mais escuro para hover) */
+    --background-light: #f4f4f9; /* (Não será mais usado para o fundo principal) */
+    --background-dark: #121212; /* Preto Quase Absoluto (Fundo da página) */
+    --text-color-dark: #2c2c2c; /* Usado para texto dentro da caixa de login */
+    --text-color-light: #fff; /* Usado para Fundo da Caixa de Login e Texto no Fundo */
+    --error-color: #ff4500; /* Laranja avermelhado para erro */
+
+    /* Espaçamento */
+    --padding-default: 20px;
+    --margin-default: 15px;
+    --border-radius: 12px;
+
+    /* Tamanhos de Fonte */
+    --font-size-base: 1rem;
+    --font-size-large: 1.5rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-dark); /* Fundo Preto */
+    color: var(--text-color-light); /* Cor do texto no fundo preto (embora o formulário seja branco) */
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: auto;
+    padding: 20px;
+}
+
+/*
+ * ----------------------------------------
+ * Estrutura do Container Principal (Caixa Única)
+ * ----------------------------------------
+ */
+.login-container {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    padding: 0;
+    border-radius: var(--border-radius);
+    background-color: var(--text-color-light); /* Caixa de login é branca para contraste */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4); /* Sombra mais intensa contra o fundo preto */
+}
+
+.image-section {
+    display: none;
+}
+
+/*
+ * ----------------------------------------
+ * Seção de Login (Única Coluna)
+ * ----------------------------------------
+ */
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+}
+
+.login-box {
+    width: 100%;
+    max-width: none;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+/*
+ * ----------------------------------------
+ * LOGO EM CÍRCULO
+ * ----------------------------------------
+ */
+.background-image {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    background-color: var(--text-color-light); /* Fundo da logo é branco */
+    padding: 8px;
+    margin-bottom: 30px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(106, 13, 173, 0.5); /* Sombra roxa forte */
+}
+
+/*
+ * ----------------------------------------
+ * Formulário e Campos
+ * ----------------------------------------
+ */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.login-form label {
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+    color: var(--text-color-dark); /* Texto dentro da caixa branca é escuro */
+}
+
+/* Nota: O texto 'Não tem uma conta? Cadastra-se' está dentro da caixa branca,
+         portanto, a cor do texto do span (register-text) será a cor padrão
+         do .login-box, mas o link mantém o roxo. */
+.register-text {
+    color: var(--text-color-dark);
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    padding: 12px;
+    border: 1px solid #c8c8d2;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-base);
+    transition: border-color 0.3s, box-shadow 0.3s;
+    width: 100%;
+}
+
+.login-form input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(106, 13, 173, 0.25);
+    outline: none;
+}
+
+/*
+ * ----------------------------------------
+ * Botão de Login
+ * ----------------------------------------
+ */
+.btn-login-full {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    border: none;
+    padding: 12px var(--padding-default);
+    margin-top: 30px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.1s;
+    width: 100%;
+}
+
+.btn-login-full:hover {
+    background-color: var(--secondary-color);
+}
+
+.btn-login-full:active {
+    transform: scale(0.99);
+}
+
+/*
+ * ----------------------------------------
+ * Links e Mensagens
+ * ----------------------------------------
+ */
+.links {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.links a {
+    color: var(--primary-color); /* Link de cadastro em roxo */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: var(--error-color);
+    background-color: rgba(255, 69, 0, 0.1);
+    border: 1px solid var(--error-color);
+    padding: 10px;
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+    display: none;
+}

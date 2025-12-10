@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra - Tech Fit</title>
+    <link rel="stylesheet" href="/techfit_php/public/css/finalizar_compra.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header-content">
+        <h1 class="main-title">CHECKOUT</h1>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="tela inicial.html">HOME</a></li>
+                <li class="nav-item"><a href="Produtos.html">PRODUTOS</a></li>
+                <li class="nav-item">
+                    <a href="carrinho.html">CARRINHO 
+                        <span id="cart-counter" class="cart-badge">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2 class="page-title">Dados de Envio e Pagamento</h2>
+
+        <div class="checkout-grid">
+            <section class="checkout-form">
+                <form id="checkout-data-form">
+                    <h3>1. Informações Pessoais e Endereço</h3>
+                    
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" required placeholder="Seu nome completo">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" required placeholder="seu.email@exemplo.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cep">CEP</label>
+                        <input type="text" id="cep" required placeholder="00000-000">
+                    </div>
+                    <div class="form-group">
+                        <label for="endereco">Endereço</label>
+                        <input type="text" id="endereco" required placeholder="Rua, número e complemento">
+                    </div>
+                </form>
+
+                <h3 class="payment-title">2. Forma de Pagamento</h3>
+                <div class="payment-options">
+                    <label class="payment-label">
+                        <input type="radio" name="payment" value="cartao" checked> 
+                        <span class="custom-radio"></span> Cartão de Crédito
+                    </label>
+                    <label class="payment-label">
+                        <input type="radio" name="payment" value="boleto"> 
+                        <span class="custom-radio"></span> Boleto Bancário
+                    </label>
+                    <label class="payment-label">
+                        <input type="radio" name="payment" value="pix"> 
+                        <span class="custom-radio"></span> PIX
+                    </label>
+                </div>
+
+                <button class="action-button" id="place-order-btn">
+                    Realizar Pedido
+                </button>
+            </section>
+
+            <aside class="cart-summary" id="order-summary-display">
+                <h3>Resumo da Compra</h3>
+                <div class="summary-line">
+                    <span>Subtotal:</span>
+                    <span id="subtotal-checkout-value">R$ 0,00</span>
+                </div>
+                <div class="summary-line">
+                    <span>Frete:</span>
+                    <span id="shipping-checkout-value">R$ 0,00</span>
+                </div>
+                <div class="summary-line total-line">
+                    <strong><span>Total:</span></strong>
+                    <strong><span id="total-checkout-value">R$ 0,00</span></strong>
+                </div>
+                
+                <p class="items-title">Itens no Pedido:</p>
+                <ul id="items-in-order-list" class="items-list">
+                    </ul>
+
+            </aside>
+        </div>
+    </main>
+
+    <script src="/techfit_php/public/js/finalizar_compra.js"></script>
+</body>
+</html>
