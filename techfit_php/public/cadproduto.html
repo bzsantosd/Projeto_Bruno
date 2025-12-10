@@ -5,6 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Produtos | Academia</title>
     <link rel="stylesheet" href="/techfit_php/public/css/cadproduto.css"> 
+    <style>
+        /* Estilos adicionais para upload de imagem */
+        .preview-container {
+            margin-top: 10px;
+            text-align: center;
+        }
+        
+        .preview-image {
+            max-width: 300px;
+            max-height: 200px;
+            border-radius: 8px;
+            margin-top: 10px;
+            display: none;
+            border: 2px solid #A020F0;
+            box-shadow: 0 2px 8px rgba(160, 32, 240, 0.2);
+        }
+        
+        .upload-label {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #A020F0;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 8px;
+        }
+        
+        .upload-label:hover {
+            background-color: #8A2BE2;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(160, 32, 240, 0.3);
+        }
+        
+        #imagem {
+            display: none;
+        }
+
+        .file-name {
+            margin-top: 8px;
+            color: #555555;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
     
@@ -30,6 +78,7 @@
                     <option value="suplemento">Suplemento</option>
                     <option value="acessorio">Acessório</option>
                     <option value="servico">Serviço</option>
+                    <option value="roupa">Roupa</option>
                 </select>
             </div>
             
@@ -43,16 +92,57 @@
                 <input type="number" id="quantidade" name="quantidade" required min="0">
             </div>
             
+            <div class="form-group">
+                <label>Imagem do Produto:</label>
+                <label for="imagem" class="upload-label">
+                    📷 Escolher Imagem
+                </label>
+                <input type="file" id="imagem" name="imagem" accept="image/*">
+                <div class="file-name" id="file-name"></div>
+                <div class="preview-container">
+                    <img id="preview" class="preview-image" alt="Preview da imagem">
+                </div>
+            </div>
+            
             <button type="submit" class="btn-submit">Cadastrar Produto</button>
             <div id="notificacao" class="notificacao-popup"></div>
             
         </form>
         
         <hr class="separator">
-        <h2 style="text-align: center;"><a href="produtoscadastrados.html" style="color: #A020F0; text-decoration: none;">Ver Lista de Produtos Cadastrados »</a></h2>
+        <h2 style="text-align: center;">
+            <a href="produtoscadastrados.html" style="color: #A020F0; text-decoration: none;">
+                Ver Lista de Produtos Cadastrados »
+            </a>
+        </h2>
         
-        </div>
+    </div>
     
-   <script src="js/cadproduto.js"></script>
+    <script>
+        // Preview da imagem
+        const imagemInput = document.getElementById('imagem');
+        const previewImg = document.getElementById('preview');
+        const fileNameDisplay = document.getElementById('file-name');
+        
+        imagemInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                // Mostra o nome do arquivo
+                fileNameDisplay.textContent = `Arquivo selecionado: ${file.name}`;
+                
+                // Mostra o preview
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    previewImg.src = e.target.result;
+                    previewImg.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                fileNameDisplay.textContent = '';
+                previewImg.style.display = 'none';
+            }
+        });
+    </script>
+    <script src="js/cadproduto.js"></script>
 </body>
 </html>

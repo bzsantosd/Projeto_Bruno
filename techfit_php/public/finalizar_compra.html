@@ -57,18 +57,109 @@
                         <span class="custom-radio"></span> Cartão de Crédito
                     </label>
                     <label class="payment-label">
-                        <input type="radio" name="payment" value="boleto"> 
-                        <span class="custom-radio"></span> Boleto Bancário
-                    </label>
-                    <label class="payment-label">
                         <input type="radio" name="payment" value="pix"> 
                         <span class="custom-radio"></span> PIX
                     </label>
+                    <label class="payment-label">
+                        <input type="radio" name="payment" value="boleto"> 
+                        <span class="custom-radio"></span> Boleto Bancário
+                    </label>
                 </div>
 
-                <button class="action-button" id="place-order-btn">
-                    Realizar Pedido
-                </button>
+                <!-- SEÇÃO PIX -->
+                <div id="pix-section" class="payment-section">
+                    <div class="pix-container">
+                        <h3>💳 Pagamento via PIX</h3>
+                        <p>Escaneie o QR Code ou copie o código abaixo:</p>
+                        
+                        <div class="qr-code-box">
+                            <img id="qr-code-img" src="" alt="QR Code PIX">
+                        </div>
+                        
+                        <div class="pix-code-area">
+                            <label for="pix-code-text"><strong>Código PIX:</strong></label>
+                            <input type="text" id="pix-code-text" class="pix-code-input" readonly>
+                            <button type="button" id="copy-pix-btn" class="btn-secondary">
+                                📋 Copiar Código
+                            </button>
+                        </div>
+                        
+                        <p style="margin-top: 20px; color: #666;">
+                            Após realizar o pagamento, clique em confirmar abaixo:
+                        </p>
+                        <button type="button" id="confirm-pix-btn" class="action-button">
+                            ✓ Confirmar Pagamento PIX
+                        </button>
+                    </div>
+                </div>
+
+                <!-- SEÇÃO CARTÃO -->
+                <div id="cartao-section" class="payment-section">
+                    <h3>💳 Dados do Cartão de Crédito</h3>
+                    <div class="valor-destaque">
+                        Total: <span id="valor-total-cartao">R$ 0,00</span>
+                    </div>
+                    
+                    <form id="form-cartao">
+                        <div class="cartao-form-group">
+                            <label for="numero-cartao">Número do Cartão</label>
+                            <input type="text" id="numero-cartao" placeholder="0000 0000 0000 0000" maxlength="19" required>
+                        </div>
+                        
+                        <div class="cartao-form-group">
+                            <label for="nome-cartao">Nome no Cartão</label>
+                            <input type="text" id="nome-cartao" placeholder="NOME COMPLETO" required>
+                        </div>
+                        
+                        <div class="form-row-2">
+                            <div class="cartao-form-group">
+                                <label for="validade-cartao">Validade</label>
+                                <input type="text" id="validade-cartao" placeholder="MM/AA" maxlength="5" required>
+                            </div>
+                            
+                            <div class="cartao-form-group">
+                                <label for="cvv-cartao">CVV</label>
+                                <input type="text" id="cvv-cartao" placeholder="123" maxlength="4" required>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="action-button" style="margin-top: 20px;">
+                            🔒 Finalizar Compra
+                        </button>
+                    </form>
+                    
+                    <p style="text-align: center; color: #666; margin-top: 15px; font-size: 0.9em;">
+                        🔐 Suas informações são criptografadas e seguras
+                    </p>
+                </div>
+
+                <!-- SEÇÃO BOLETO -->
+                <div id="boleto-section" class="payment-section">
+                    <div class="boleto-info">
+                        <div class="boleto-icon">📄</div>
+                        <h3>Boleto Bancário</h3>
+                        
+                        <div class="boleto-warning">
+                            <strong>⚠️ Atenção:</strong> O boleto será enviado para seu e-mail.
+                            O prazo de compensação é de até 3 dias úteis.
+                        </div>
+                        
+                        <div class="email-input-group">
+                            <label for="email-boleto"><strong>Confirme seu e-mail:</strong></label>
+                            <input type="email" id="email-boleto" placeholder="seu.email@exemplo.com" required>
+                        </div>
+                        
+                        <button type="button" id="send-boleto-btn" class="action-button">
+                            📧 Enviar Boleto por E-mail
+                        </button>
+                        
+                        <p style="margin-top: 20px; color: #666; font-size: 0.9em;">
+                            Você receberá o boleto em seu e-mail em até 5 minutos.
+                            Verifique também sua caixa de spam.
+                        </p>
+                    </div>
+                </div>
+
             </section>
 
             <aside class="cart-summary" id="order-summary-display">
@@ -88,8 +179,7 @@
                 
                 <p class="items-title">Itens no Pedido:</p>
                 <ul id="items-in-order-list" class="items-list">
-                    </ul>
-
+                </ul>
             </aside>
         </div>
     </main>
