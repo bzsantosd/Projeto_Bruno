@@ -1,4 +1,4 @@
-/*
+        /*
  * ----------------------------------------
  * Variáveis de Cores e Estilos
  * ----------------------------------------
@@ -45,70 +45,6 @@ body {
     padding: 0 var(--padding-default);
 }
 
-/*
- * ----------------------------------------
- * Cabeçalho e Navegação
- * ----------------------------------------
- */
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 var(--padding-default);
-    height: var(--header-height);
-    background-color: var(--background-dark);
-    border-bottom: 1px solid var(--border-color);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.nav-list {
-    list-style: none;
-    display: flex;
-}
-
-.nav-item {
-    margin-left: var(--margin-default);
-}
-
-.nav-item a {
-    text-decoration: none;
-    color: var(--text-color-light);
-    padding: 10px 12px;
-    border-radius: var(--border-radius);
-    transition: background-color 0.3s, color 0.3s;
-    font-size: 0.95rem;
-    font-weight: 600;
-    display: block;
-}
-
-.nav-item a:hover {
-    color: var(--primary-color);
-    background-color: var(--border-color);
-}
-
-.nav-item.active a {
-    color: var(--primary-color);
-    border-bottom: 3px solid var(--primary-color);
-    padding-bottom: 7px;
-}
-
-/* Botão de Entrar */
-.auth-buttons .btn-login {
-    text-decoration: none;
-    background-color: var(--primary-color);
-    color: var(--text-color-light);
-    padding: 8px 18px;
-    border-radius: var(--border-radius);
-    font-weight: 700;
-    transition: background-color 0.3s;
-}
-
-.auth-buttons .btn-login:hover {
-    background-color: var(--secondary-color);
-    color: var(--text-color-light);
-}
 
 /*
  * ----------------------------------------
@@ -319,11 +255,7 @@ body {
     color: var(--text-color-accent);
 }
 
-/*
- * ----------------------------------------
- * Rodapé (Footer)
- * ----------------------------------------
- */
+
 .footer {
     text-align: center;
     padding: var(--padding-default) 0;

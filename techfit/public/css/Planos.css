@@ -42,47 +42,6 @@ a {
 }
 /* Estilo de clique: mantido apenas para o botão principal .action-button */
 
-/* --- Estilos do Cabeçalho --- */
-.header-content {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    padding: 25px 5%; 
-    background-color: var(--color-dark); 
-    border-bottom: 2px solid var(--color-purple-primary);
-}
-
-.navbar {
-    width: 100%;
-    text-align: center; 
-}
-
-.nav-list {
-    display: flex;
-    list-style: none;
-    justify-content: center;
-}
-
-.nav-item {
-    margin: 0 15px;
-}
-
-.nav-item a {
-    font-weight: 600;
-    padding-bottom: 5px;
-    color: var(--color-text-light);
-}
-
-/* Corrigido: Usando a classe 'active' para o link ativo (Planos) */
-.nav-item.active a {
-    color: var(--color-purple-primary);
-    border-bottom: 2px solid var(--color-purple-primary);
-}
-
-.nav-item a:hover {
-    color: var(--color-purple-primary);
-    border-bottom: 2px solid var(--color-purple-primary);
-}
 
 /* --- Título da Página de Planos --- */
 .page-title {

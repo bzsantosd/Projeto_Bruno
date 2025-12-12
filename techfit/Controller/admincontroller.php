@@ -1,41 +1,46 @@
 <?php
-
 namespace techfit;
 
+require_once __DIR__ . "\\..\\Model\\admModel.php"; 
 
-require_once __DIR__ . "\\Model\\adm.php"; 
+require_once __DIR__ . "\\..\\Model\\admin.php";
 
 
-class Adm{
-
-    // Renomeamos a variável para refletir a nova classe do Model
-    private $adm;
+class admController {
+    private $dao;
 
     public function __construct() {
-        $this->adm = new adm(); 
+        $this->dao = new admDAO();
     }
 
     public function ler() {
-        return $this->adm->ler();
+        return $this->dao->lerAdmins();
     }
 
-    // Método para ATUALIZAR (dados de um administrador)
-    public function atualizar($nome, $cargo, $email, $senha) {
-        $this->adm->atualizar($nome, $cargo, $email, $senha);
+    public function criar($nome, $cargo, $email, $senha) {
+        // 1. Cria o objeto Model/Entidade
+        $admin = new admin($nome, $cargo, $email, $senha);
+        
+        // 2. Chama o método de persistência (DAO)
+        $this->dao->criarAdmin($admin);
     }
 
-    // Método para DELETAR
-    public function deletar($nome) {
-        $this->adm->deletar($nome); 
+    public function deletar($email) {
+        $this->dao->excluirAdmin($email);
     }
+
     
-    // Método para EDITAR (se tiver função diferente de atualizar)
-    public function editar($nome, $cargo, $email, $senha) {
-        $this->adm->editar($nome, $cargo, $email, $senha);    
+    public function editar($email, $nome, $cargo, $senha) {
+        // Chama o método de atualização do DAO, onde o emailOriginal é igual ao novoEmail.
+        $this->dao->atualizarAdmin(
+            $email,     // $emailOriginal
+            $nome,      // $novoNome
+            $cargo,     // $novoCargo
+            $email,     // $novoEmail (mantém o mesmo)
+            $senha      // $novaSenha
+        );
     }
-
-    // Método para BUSCAR por um critério específico
-    public function buscar($nome) {
-        return $this->adm->buscar($nome); 
+    public function buscar($email) {
+        return $this->dao->buscarPorEmail($email);
     }
 }

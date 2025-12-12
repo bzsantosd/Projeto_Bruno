@@ -64,10 +64,6 @@ class admDAO {
         return $result;
     }
 
-    // UPDATE
-    /**
-     * Atualiza os dados de um admin, buscando pelo email original.
-     */
     public function atualizarAdmin($emailOriginal, $novoNome, $novoCargo, $novoEmail, $novaSenha) {
         $stmt = $this->conn->prepare("
             UPDATE admins
@@ -83,20 +79,12 @@ class admDAO {
         ]);
     }
 
-    // DELETE
-    /**
-     * Exclui um admin buscando pelo email.
-     */
     public function excluirAdmin($email) {
         $stmt = $this->conn->prepare("DELETE FROM admins WHERE email = :email");
         $stmt->execute([':email' => $email]);
     }
 
-    // BUSCAR POR EMAIL
-    /**
-     * Busca um admin pelo email.
-     * @return admin|null O objeto admin se encontrado, ou null.
-     */
+    
     public function buscarPorEmail($email) {
         $stmt = $this->conn->prepare("SELECT * FROM admins WHERE email = :email LIMIT 1");
         $stmt->execute([':email' => $email]);

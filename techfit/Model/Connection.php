@@ -28,11 +28,6 @@ class Connection {
                 self::$instancia->exec("CREATE DATABASE IF NOT EXISTS $db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
                 self::$instancia->exec("USE $db");
 
-                self::$instancia->exec("CREATE TABLE IF NOT EXISTS teste (
-                teste_nome varchar(100)
-                )");
-                self::$instancia->exec("insert into teste (teste_nome) values (HEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHE)");
-
 
             }
             catch (PDOException $e) {

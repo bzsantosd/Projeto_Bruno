@@ -1,0 +1,76 @@
+:root {
+    /* Cores - Roxo e Preto */
+    --primary-color: #6a0dad; /* Roxo Principal (Destaques, Botões) */
+    --secondary-color: #4b0082; /* Roxo Índigo (Hover) */
+    --background-dark: #121212; /* Fundo Principal */
+    --background-card: #1f1f1f; /* Cor dos cards (cinza escuro sutil) */
+    --text-color-light: #fff; /* Texto no fundo preto */
+    --text-color-accent: #ddd; /* Texto secundário ou neutro */
+    --border-color: #333333; /* Cor da borda/linha em fundo escuro */
+
+    /* Espaçamento */
+    --padding-default: 20px;
+    --margin-default: 15px;
+    --border-radius: 8px;
+    --header-height: 70px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--padding-default);
+    height: var(--header-height);
+    background-color: var(--background-dark);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-item {
+    margin-left: var(--margin-default);
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: var(--text-color-light);
+    padding: 10px 12px;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 0.95rem;
+    font-weight: 600;
+    display: block;
+}
+
+.nav-item a:hover {
+    color: var(--primary-color);
+    background-color: var(--border-color);
+}
+
+.nav-item.active a {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 7px;
+}
+
+/* Botão de Entrar */
+.auth-buttons .btn-login {
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 8px 18px;
+    border-radius: var(--border-radius);
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.auth-buttons .btn-login:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+}

@@ -51,15 +51,6 @@ a:hover {
     flex-grow: 1;
 }
 
-/* ==================== ESTILOS DO HEADER (CONSISTÊNCIA) ==================== */
-.header-content {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 25px 5%; 
-    background-color: var(--background-dark); 
-    border-bottom: 2px solid var(--primary-color);
-}
 
 .main-title {
     font-size: 1.8em; 
@@ -69,59 +60,6 @@ a:hover {
     margin: 0; 
 }
 
-.navbar {
-    flex-grow: 1; 
-    text-align: center;
-}
-
-.nav-list {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.nav-item {
-    margin: 0 15px;
-}
-
-.nav-item a {
-    font-weight: 600;
-    padding-bottom: 5px;
-    color: var(--text-light);
-}
-
-.nav-item.active a {
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
-}
-
-.nav-item a:hover {
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
-}
-
-/* Adicionando estilos para o ícone do carrinho, se estiver presente */
-.cart-icon-item {
-    position: relative;
-    font-size: 1.5em;
-    padding-left: 20px;
-}
-.cart-link {
-    color: var(--text-light);
-}
-.cart-badge {
-    position: absolute;
-    top: -5px;
-    right: -10px;
-    background-color: var(--primary-color);
-    color: var(--text-light);
-    border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 0.7em;
-    font-weight: 600;
-}
 
 /* ==================== SEÇÃO SOBRE NÓS ==================== */
 

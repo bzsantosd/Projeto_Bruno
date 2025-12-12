@@ -16,16 +16,17 @@ if ($request_uri !== '') {
 }
 
 $routes = [
-    '' => 'tela inicial.html',
-    'home' => 'tela inicial.html',
-    'cadastro' => 'cadastro.html',
-    'login' => 'login.html',
+    '' => './View/index.php',
+    'home' => './View/index.php',
+    'cadastro' => './View/login/usuario.php',
+    'login' => './View/login/login.php',
     'perfil' => 'perfil.html',
-    'produtos' => 'Produtos.html',
-    'planos' => 'Planos.html',
-    'contato' => 'contato.html',
-    'carrinho' => 'carrinho.html',
-    // adicione outras rotas conforme necessário
+    'produtos' => './View/inicial/produtos.php',
+    'planos' => './View/inicial/planos.php',
+    'contato' => './View/inicial/contato.php',
+    'carrinho' => './View/inicial/carrinho.php',
+    'sobrenos'=> './View/inicial/sobrenos.php',
+    'cliente' => './View/cliente/cliente.php'
 ];
 
 if (array_key_exists($request_uri, $routes)) {

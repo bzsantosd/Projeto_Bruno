@@ -31,83 +31,12 @@ body {
     flex-direction: column; /* Necessário para o footer fixo no final */
 }
 
-/* --- Cabeçalho e Conteúdo --- */
-.header-content {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 25px 5%;
-    /* CORREÇÃO: Usando variável existente para o fundo */
-    background-color: var(--bg-dark); 
-    border-bottom: 2px solid var(--color-purple-bright);
-    width: 100%;
-}
-
-/* Placeholder e Carrinho para equilíbrio do layout */
-.logo-placeholder, .cart-icon-item {
-    width: 150px; /* Largura definida para equilíbrio */
-    text-align: left;
-}
-.cart-icon-item {
-    list-style: none; /* Remover bullet do carrinho */
-    text-align: right; /* Alinhar o carrinho à direita */
-}
-.cart-icon-item a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 600;
-    position: relative;
-    padding: 5px 0;
-}
-.cart-badge {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background-color: red;
-    border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 0.7em;
-    font-weight: 700;
-}
-
-.navbar {
-    /* Centraliza a lista de navegação no espaço restante */
-    flex-grow: 1; 
-    text-align: center; 
-}
-
-.nav-list {
-    display: flex;
-    list-style: none;
-    justify-content: center;
-}
-
-.nav-item {
-    margin: 0 15px;
-}
-
-.nav-item a {
-    font-weight: 600;
-    padding-bottom: 5px;
-    text-decoration: none;
-    /* CORREÇÃO: Usando variável existente para o texto claro */
-    color: var(--text-color); 
-    transition: color 0.3s, border-bottom 0.3s;
-}
-
-.nav-item.active a,
-.nav-item a:hover {
-    color: var(--color-purple-bright);
-    border-bottom: 2px solid var(--color-purple-bright);
-}
 
 /* --- Conteúdo Principal e Testemunhos (Mantidos, mas não usados nesta página) --- */
 .content-wrapper {
     min-height: calc(100vh - 250px);
 }
-.testimonials-section, .card, .btn-experimental {
-    /* ... estilos mantidos para evitar quebra de outras páginas ... */
-}
+
 /* --- Conteúdo da Seção de Contato --- */
 .contact-section {
     max-width: 1000px;

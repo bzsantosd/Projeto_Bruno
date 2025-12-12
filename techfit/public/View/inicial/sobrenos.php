@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACADEMIA TECHFIT - Sobre Nós</title>
+    
+    <link rel="stylesheet" href="../../css/sobrenos.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <?php include_once __DIR__ . "\\..\\Layout\\header.php" ?>
+
+    <main class="container">
+        <div class="title-section">
+            <h2 class="section-title">Nossa História: A União entre Saúde e Tecnologia</h2>
+        </div>
+        
+        <section class="about-section">
+            <div class="about-text-box">
+                <p>Na era da conexão total, surgiu a Tech Fit, não como uma academia tradicional, mas como uma união entre <strong>saúde e a tecnologia.</strong></p>
+
+                <p>Trazida ao Brasil com tecnologia europeia, possui uma promessa: <strong>resultados incríveis com sessões semanais e sem a necessidade de equipamentos pesados.</strong></p>
+
+                <p>Assim, a Tech Fit representa a jornada de transformar corpos e mentes, provando que, para cuidar de si, basta unir a determinação de ser fit à <strong>eficiência da tech.</strong></p>
+            </div>
+            
+            <div class="about-visuals">
+                <img src="/IMAGENS/Logotipo Faustino Academia Ilustrativo Verde Azul Branco.png" alt="TechFit Logo" class="logo-img"> 
+                </div>
+        </section>
+        
+        <section class="value-section">
+            <h3 class="value-title">Nossos Valores</h3>
+            <div class="value-cards">
+                <div class="value-card">
+                    <h4>Inovação</h4>
+                    <p>Buscamos constantemente as melhores tecnologias para otimizar seu treino e resultados.</p>
+                </div>
+                <div class="value-card">
+                    <h4>Eficiência</h4>
+                    <p>Treinos rápidos e eficazes que se encaixam na sua rotina corrida.</p>
+                </div>
+                <div class="value-card">
+                    <h4>Comunidade</h4>
+                    <p>Um ambiente inclusivo e motivador, onde a tecnologia nos conecta.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 TechFit Academia. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

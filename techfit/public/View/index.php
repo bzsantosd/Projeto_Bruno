@@ -1,3 +1,6 @@
+<?php
+session_abort();
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,27 +12,10 @@
  
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
  
- <link rel="stylesheet" href="/techfit/public/css/inicial.css">
+ <link rel="stylesheet" href="./css/inicial.css">
 </head>
 <body>
-    
-
- <header class="header-content">
-  
-  <nav class="navbar">
-   <ul class="nav-list">
-    <li class="nav-item active"><a href="/techfit/public/tela inicial.html" data-page="home">HOME</a></li>
-    <li class="nav-item"><a href="/techfit/public/Planos.html" data-page="planos">PLANOS</a></li>
-    <li class="nav-item"><a href="/techfit/public/Produtos.html" data-page="produtos">PRODUTOS</a></li>
-    <li class="nav-item"><a href="/techfit/public/contato.html" data-page="contato">CONTATO</a></li>
-    <li class="nav-item"><a href="/techfit/public/sobrenos.html" data-page="sobre">SOBRE NÓS</a></li>
-   </ul>
-  </nav>
-  <div class="auth-buttons">
-   <a href="login.html" class="btn btn-login">ENTRAR</a>
-  </div>
- </header>
-
+    <?php include_once __DIR__ . "\\Layout\\header.php" ?>
  <main class="container">
 
   <div class="content-wrapper">

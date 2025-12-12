@@ -7,10 +7,9 @@
     /* Cores - Roxo e Preto */
     --primary-color: #6a0dad; /* Roxo Profundo/Violeta Principal */
     --secondary-color: #4b0082; /* Roxo Índigo (Mais escuro para hover) */
-    --background-light: #f4f4f9; /* (Não será mais usado para o fundo principal) */
     --background-dark: #121212; /* Preto Quase Absoluto (Fundo da página) */
-    --text-color-dark: #2c2c2c; /* Usado para texto dentro da caixa de login */
-    --text-color-light: #fff; /* Usado para Fundo da Caixa de Login e Texto no Fundo */
+    --text-color-dark: #2c2c2c; /* Usado para texto dentro da caixa de login (Preto escuro) */
+    --text-color-light: #fff; /* Usado para Fundo da Caixa de Login (Branco) e Texto no Fundo */
     --error-color: #ff4500; /* Laranja avermelhado para erro */
 
     /* Espaçamento */
@@ -32,15 +31,28 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--background-dark); /* Fundo Preto */
-    color: var(--text-color-light); /* Cor do texto no fundo preto (embora o formulário seja branco) */
+    color: var(--text-color-light); /* Cor do texto padrão no fundo (se houver texto fora do container) */
     line-height: 1.6;
+    min-height: 100vh;
+    /* Remove a centralização absoluta para permitir o header fluir */
+    display: flex; /* Mantido flex para facilitar a centralização do main content */
+    flex-direction: column; /* Coloca os elementos em coluna (Header, Main Content, Footer) */
+    overflow-x: hidden;
+    padding: 0; /* O padding deve ser aplicado em containers internos, não no body */
+}
+
+/* * Novo Container para o Conteúdo Principal (Centraliza o Login)
+ * Isso garante que o header não seja centralizado.
+ */
+.main-content-wrapper {
+    flex-grow: 1; /* Permite que o wrapper ocupe o espaço restante */
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    overflow: auto;
-    padding: 20px;
+    padding: var(--padding-default); /* Adiciona padding para margem segura */
+    width: 100%;
 }
+
 
 /*
  * ----------------------------------------
@@ -54,8 +66,9 @@ body {
     height: auto;
     padding: 0;
     border-radius: var(--border-radius);
-    background-color: var(--text-color-light); /* Caixa de login é branca para contraste */
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4); /* Sombra mais intensa contra o fundo preto */
+    background-color: var(--text-color-light); /* Caixa de login é branca (Fundo dos campos) */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4); 
+    /* Adiciona margem em cima e embaixo se necessário, mas o wrapper já faz o trabalho */
 }
 
 .image-section {
@@ -80,6 +93,8 @@ body {
     max-width: none;
     padding: 40px 30px;
     text-align: center;
+    /* Cor do texto padrão dentro da caixa: Preto */
+    color: var(--text-color-dark);
 }
 
 /*
@@ -91,17 +106,17 @@ body {
     width: 150px;
     height: 150px;
     object-fit: contain;
-    background-color: var(--text-color-light); /* Fundo da logo é branco */
+    background-color: var(--text-color-light); 
     padding: 8px;
     margin-bottom: 30px;
     border-radius: 50%;
     border: 3px solid var(--primary-color);
-    box-shadow: 0 4px 15px rgba(106, 13, 173, 0.5); /* Sombra roxa forte */
+    box-shadow: 0 4px 15px rgba(106, 13, 173, 0.5); 
 }
 
 /*
  * ----------------------------------------
- * Formulário e Campos
+ * Formulário e Campos (Fundo Branco/Claro, Texto Preto/Escuro)
  * ----------------------------------------
  */
 .login-form {
@@ -115,30 +130,24 @@ body {
     margin-top: 15px;
     margin-bottom: 5px;
     font-size: 0.95rem;
-    color: var(--text-color-dark); /* Texto dentro da caixa branca é escuro */
+    color: var(--text-color-dark); /* Texto das labels: Preto escuro */
 }
 
-/* Nota: O texto 'Não tem uma conta? Cadastra-se' está dentro da caixa branca,
-         portanto, a cor do texto do span (register-text) será a cor padrão
-         do .login-box, mas o link mantém o roxo. */
 .register-text {
-    color: var(--text-color-dark);
+    color: var(--text-color-dark); /* Texto 'Não tem uma conta?' */
 }
 
 .login-form input[type="text"],
 .login-form input[type="password"] {
+    /* Manter o fundo claro (se var(--text-color-light) for branco) */
+    background-color: var(--text-color-light); 
+    color: var(--text-color-dark); /* Cor do texto digitado: Preto */
     padding: 12px;
     border: 1px solid #c8c8d2;
     border-radius: var(--border-radius);
     font-size: var(--font-size-base);
     transition: border-color 0.3s, box-shadow 0.3s;
     width: 100%;
-}
-
-.login-form input:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 0.2rem rgba(106, 13, 173, 0.25);
-    outline: none;
 }
 
 /*

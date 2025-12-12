@@ -1,0 +1,38 @@
+:root {
+    /* Cores */
+    --primary-color: #A020F0; /* Roxo principal/Accent */
+    --secondary-color: #FFFFFF; /* Branco */
+    --background-dark: #000000; /* Fundo preto total */
+    --background-card: #1A1A1A; /* Fundo do card/Elemento */
+    --text-light: #FFFFFF;
+    --text-secondary: #AAAAAA; /* Descrições e detalhes */
+    
+    /* Tipografia */
+    --font-family: 'Poppins', sans-serif;
+}
+
+.cart-icon-item {
+    position: relative; 
+    list-style: none; 
+    width: 150px; /* Largura definida para equilíbrio */
+    text-align: right;
+}
+.cart-icon-item a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 600;
+}
+.cart-badge {
+    position: absolute;
+    top: -10px; 
+    right: -10px;
+    background-color: var(--primary-color); 
+    color: var(--secondary-color); 
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 50%;
+    min-width: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); 
+    pointer-events: none; 
+}
